@@ -36,7 +36,7 @@ sheet_headers = {
 
 
 def GetSheetIDFromSettings():
-	sid = "1rWQPx2d8M9qmizAOTUoozEFExLUvRcM7mxOK44G0kc4"
+	sid = "1ANRaoJaW12WTrWRIRUzITTw-S6AAJ7n2334t-zUuDaw"
 	resp, content = http.request(get_fshare_setting("GSheetURL"), "HEAD")
 	try:
 		sid = re.compile("/d/(.+?)/").findall(resp["content-location"])[0]
@@ -199,7 +199,7 @@ def getItems(url_path="0", tq="select A,B,C,D,E"):
 			item["path"] = pluginrootpath + "/executebuiltin/-"
 		else:
 			if "spreadsheets/d/" in item["path"]:
-				# https://docs.google.com/spreadsheets/d/1rWQPx2d8M9qmizAOTUoozEFExLUvRcM7mxOK44G0kc4/edit#gid=0
+				# https://docs.google.com/spreadsheets/d/1ANRaoJaW12WTrWRIRUzITTw-S6AAJ7n2334t-zUuDaw/edit#gid=0
 				match_cache = re.search('cache=(.+?)($|&)', item["path"])
 				match_passw = re.search('passw=(.+?)($|&)', item["path"])
 
@@ -816,7 +816,7 @@ def get_playable_url(url):
 		yid = match[0][len(match[0])-1].replace('v/', '')
 		url = 'plugin://plugin.video.youtube/play/?video_id=%s' % yid
 	elif "thvli.vn/backend/cm/detail/" in url:
-		get_thvl = "https://docs.google.com/spreadsheets/d/1rWQPx2d8M9qmizAOTUoozEFExLUvRcM7mxOK44G0kc4/export?format=tsv&gid=1287121588"
+		get_thvl = "https://docs.google.com/spreadsheets/d/1ANRaoJaW12WTrWRIRUzITTw-S6AAJ7n2334t-zUuDaw/export?format=tsv&gid=1287121588"
 		try:
 			(resp, content) = http.request(
 				get_thvl, "GET"
@@ -849,7 +849,7 @@ def get_playable_url(url):
 				pass
 	elif "sphim.tv" in url:
 		http.follow_redirects = False
-		get_sphim = "https://docs.google.com/spreadsheets/d/1rWQPx2d8M9qmizAOTUoozEFExLUvRcM7mxOK44G0kc4/export?format=tsv&gid=1082544232"
+		get_sphim = "https://docs.google.com/spreadsheets/d/1ANRaoJaW12WTrWRIRUzITTw-S6AAJ7n2334t-zUuDaw/export?format=tsv&gid=1082544232"
 		try:
 			(resp, content) = http.request(
 				get_sphim, "GET"
